@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Allow: /pdfs/
+Disallow: /admin.html
+Disallow: /run-admin.bat
+
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /
+Allow: /pdfs/
+Disallow: /admin.html
+
+# Sitemap location
+Sitemap: https://rajkajorders.com/sitemap.xml
+
