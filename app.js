@@ -62,7 +62,7 @@ const SIDEBAR_HELPLINE_LINKS = [
 
 // 3. दायाँ साइडबार: Download Form's
 const SIDEBAR_DOWNLOAD_FORMS = [
-    { title: "CCL FORM (Child Care Rules and format )", url: "ccl.html", external: false },
+    { title: "CCL FORM (Child Care Rules and format )", url: "ccl.html", external: true },
     { title: "PL FORM", url: "./pdfs/forms/PL FORM.pdf", external: true },
     { title: "HRA FORMAT", url: "./pdfs/forms/HRAFORMAT.pdf", external: true },
     { title: "राजस्थान सेवा नियम RSR RULES", url: "#", external: false },
@@ -85,7 +85,7 @@ const portalPosts = [
         categoryName: "सेवा नियम (RSR)",
         author: "वित्त विभाग राजस्थान",
         orderRef: "RSR Rule 103-C",
-        pdfUrl: "pdfs/sample-order.pdf",
+        pdfUrl: "pdfs/CCL FORM.pdf",
         customPageUrl: "ccl.html",
         body: `
             <p>राजस्थान सेवा नियम, 1951 के Rule 103-C के अंतर्गत महिला एवं एकल पुरुष सरकारी कर्मचारियों के लिए Child Care Leave (CCL) के संपूर्ण नियम, पात्रता, 730 दिन की सीमा, 100% व 80% वेतन प्रावधान एवं आवेदन प्रक्रिया।</p>
@@ -126,8 +126,8 @@ const portalPosts = [
             <p><strong>अधिक जानकारी एवं शर्तों के लिए कृपया नीचे दिए गए बटन से आधिकारिक आदेश प्रतिलिपि डाउनलोड करें।</strong></p>
         `
     },
-    
-       {
+
+    {
         id: 'post-1',
         type: 'latest',
         featured: true,
