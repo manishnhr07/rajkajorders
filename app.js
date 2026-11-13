@@ -85,7 +85,7 @@ const portalPosts = [
         categoryName: "सेवा नियम (RSR)",
         author: "वित्त विभाग राजस्थान",
         orderRef: "RSR Rule 103-C",
-        pdfUrl: "pdfs/CCL FORM.pdf",
+        pdfUrl: "pdfs/forms/CCL FORM.pdf",
         customPageUrl: "ccl.html",
         body: `
             <p>राजस्थान सेवा नियम, 1951 के Rule 103-C के अंतर्गत महिला एवं एकल पुरुष सरकारी कर्मचारियों के लिए Child Care Leave (CCL) के संपूर्ण नियम, पात्रता, 730 दिन की सीमा, 100% व 80% वेतन प्रावधान एवं आवेदन प्रक्रिया।</p>
