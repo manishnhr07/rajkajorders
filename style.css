@@ -814,23 +814,19 @@ ul {
     gap: 4px;
 }
 
-.tag-da_pay {
+.tag-da_pay, .tag-Finance {
     background: #ecfdf5;
     color: #047857;
     border-color: #a7f3d0;
 }
 
-.tag-school {
-    background: #eff6ff;
-    color: #1d4ed8;
-    border-color: #bfdbfe;
+.tag-general {
+    background: #f8fafc;
+    color: #334155;
+    border-color: #cbd5e1;
 }
 
-.tag-promotion {
-    background: #faf5ff;
-    color: #7e22ce;
-    border-color: #e9d5ff;
-}
+
 
 .tag-rules {
     background: #fffbeb;

@@ -16,7 +16,7 @@
  *     featured: true,                             // true (प्रमुख पोस्ट) या false
  *     title: "आपकी नई पोस्ट का मुख्य शीर्षक",
  *     date: "30.10.2026",                         // दिनांक (DD.MM.YYYY)
- *     category: "da_pay",                         // da_pay | school | promotion | rules | schemes
+ *     category: "da_pay",                         // da_pay | rules | schemes | general
  *     categoryName: "वेतन व DA",
  *     author: "वित्त विभाग राजस्थान",
  *     orderRef: "क्रमांक: 2026/101",
@@ -79,7 +79,7 @@ const portalPosts = [
         categoryName: "सेवा नियम (RSR)",
         author: "वित्त विभाग राजस्थान",
         orderRef: "RSR Rule 103-C",
-        pdfUrl: "pdfs/forms/CCL FORM.pdf",
+        pdfUrl: "./ccl.html",
         customPageUrl: "ccl.html",
         body: `
             <p>राजस्थान सेवा नियम, 1951 के Rule 103-C के अंतर्गत महिला एवं एकल पुरुष सरकारी कर्मचारियों के लिए Child Care Leave (CCL) के संपूर्ण नियम, पात्रता, 730 दिन की सीमा, 100% व 80% वेतन प्रावधान एवं आवेदन प्रक्रिया।</p>
@@ -127,8 +127,8 @@ const portalPosts = [
         featured: true,
         title: "DA Hike Order 60% to 63%",
         date: "30.10.2026",
-        category: "Finance",
-        categoryName: "DA Rate",
+        category: "da_pay",
+        categoryName: "वेतन व DA",
         author: "वित्त विभाग (नियम प्रकोष्ठ) जयपुर",
         orderRef: "F.1(45)FD/Rules/2026",
         pdfUrl: "https://finance.rajasthan.gov.in/PDFDOCS/RULES/15248.pdf",
@@ -155,8 +155,8 @@ const portalPosts = [
         featured: true,
         title: "Bonus order for FY 2025-26",
         date: "30.10.2026",
-        category: "Finance",
-        categoryName: "Bonus",
+        category: "da_pay",
+        categoryName: "वेतन व बोनस",
         author: "वित्त विभाग (नियम प्रकोष्ठ) जयपुर",
         orderRef: "F.1(45)FD/Rules/2026",
         pdfUrl: "https://finance.rajasthan.gov.in/PDFDOCS/RULES/15250.pdf",
@@ -383,8 +383,10 @@ function renderPostsFeed() {
         // Tab filter: 'all', 'latest', 'older'
         const matchesTab = (currentPostTab === 'all') || (item.type === currentPostTab);
 
-        // Category filter
-        const matchesCategory = (currentPostCategory === 'all') || (item.category === currentPostCategory);
+        // Category filter (da_pay also covers Finance)
+        const matchesCategory = (currentPostCategory === 'all') ||
+            (item.category === currentPostCategory) ||
+            (currentPostCategory === 'da_pay' && (item.category === 'Finance' || item.category === 'da_pay'));
 
         // Search query filter
         const matchesSearch = !postSearchQuery ||
@@ -513,7 +515,7 @@ function renderPostsFeed() {
                         <i class="fa-solid fa-file-pdf"></i>
                         <div>
                             <h4>आधिकारिक आदेश / परिपत्र प्रतिलिपि</h4>
-                            <p>संलग्न फाइल: <strong>${pdfFileName}</strong> (क्लिक करके सीधे डाउनलोड करें)</p>
+                            <p>क्लिक करके सीधे आधिकारिक प्रतिलिपि डाउनलोड करें</p>
                         </div>
                     </div>
                     <button class="btn-primary" onclick="downloadPostPdf('${post.id}')">
@@ -551,11 +553,11 @@ function renderPostsFeed() {
 // Category Helper
 function getCategoryLabel(cat) {
     switch (cat) {
-        case 'da_pay': return 'वेतन व DA';
-        case 'school': return 'शाला दर्पण व विद्यालय';
-        case 'promotion': return 'पदोन्नति (DPC)';
+        case 'da_pay':
+        case 'Finance': return 'वेतन व DA';
         case 'rules': return 'सेवा नियम (RSR)';
-        case 'schemes': return 'योजनाएं';
+        case 'schemes': return 'कल्याणकारी योजनाएं';
+        case 'general': return 'सामान्य परिपत्र';
         default: return 'सामान्य परिपत्र';
     }
 }
@@ -802,8 +804,7 @@ function openPostModal(postId) {
     if (refEl) refEl.textContent = post.orderRef || 'सक्षम स्तर से अनुमोदित';
 
     if (pdfNameEl) {
-        const fileName = post.pdfUrl ? post.pdfUrl.split('/').pop() : 'official-order.pdf';
-        pdfNameEl.innerHTML = `संलग्न आधिकारिक फाइल: <strong>${fileName}</strong>`;
+        pdfNameEl.innerHTML = `आधिकारिक आदेश प्रतिलिपि (PDF)`;
     }
 
     if (bodyEl) {
