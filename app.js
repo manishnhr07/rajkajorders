@@ -64,13 +64,7 @@ const SIDEBAR_HELPLINE_LINKS = [
 const SIDEBAR_DOWNLOAD_FORMS = [
     { title: "CCL FORM (Child Care Rules and format )", url: "ccl.html", external: true },
     { title: "PL FORM", url: "./pdfs/forms/PL FORM.pdf", external: true },
-    { title: "HRA FORMAT", url: "./pdfs/forms/HRAFORMAT.pdf", external: true },
-    { title: "राजस्थान सेवा नियम RSR RULES", url: "#", external: false },
-    { title: "राज्य बीमा सम्बन्धी प्रपत्र (SI)", url: "#", external: false },
-    { title: "सामान्य प्रावधायी निधि सम्बन्धी प्रपत्र(GPF)", url: "#", external: false },
-    { title: "नवीन पेंशन योजना सम्बन्धी प्रपत्र (NPS)", url: "#", external: false },
-    { title: "सामूहिक दुर्घटना बीमा (GPA)", url: "#", external: false },
-    { title: "SCHOLARSHIP-छात्रवृत्ति Portal", url: "https://sje.rajasthan.gov.in/", external: true }
+    { title: "HRA FORMAT", url: "./pdfs/forms/HRAFORMAT.pdf", external: true }
 ];
 
 // पोर्टल की सभी पोस्ट्स (Full 200-300+ Words Detailed Posts)
